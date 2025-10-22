@@ -1,0 +1,67 @@
+<Window x:Class="Конвертер_FFMpeg.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="FFMpeg Converter" Height="700" Width="600">
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <Button Grid.Row="0" Content="Выбрать файл" Click="OnSelectFileClick" Margin="0,0,0,10"/>
+        <TextBlock Grid.Row="1" x:Name="SelectedFileTextBlock" Margin="0,0,0,10"/>
+
+        <Label Grid.Row="2" Content="Видеокодек:" Margin="0,10,0,0"/>
+        <ComboBox Grid.Row="3" x:Name="VideoCodecComboBox" Margin="0,0,0,10" SelectedIndex="0">
+            <ComboBoxItem>H.266 (VVC)</ComboBoxItem>
+            <ComboBoxItem>H.265 (HEVC)</ComboBoxItem>
+            <ComboBoxItem>AV1</ComboBoxItem>
+            <ComboBoxItem>VP9</ComboBoxItem>
+        </ComboBox>
+
+        <Label Grid.Row="4" Content="Аудиокодек:" Margin="0,10,0,0"/>
+        <ComboBox Grid.Row="5" x:Name="AudioCodecComboBox" Margin="0,0,0,10" SelectedIndex="0">
+            <ComboBoxItem>Opus</ComboBoxItem>
+            <ComboBoxItem>AAC</ComboBoxItem>
+            <ComboBoxItem>Vorbis</ComboBoxItem>
+        </ComboBox>
+
+        <Label Grid.Row="6" Content="Битрейт видео (например, 384k):" Margin="0,10,0,0"/>
+        <TextBox Grid.Row="7" x:Name="VideoBitrateTextBox" Text="384k" Margin="0,0,0,10"/>
+
+        <Label Grid.Row="8" Content="Битрейт аудио (например, 128k):" Margin="0,10,0,0"/>
+        <TextBox Grid.Row="9" x:Name="AudioBitrateTextBox" Text="64k" Margin="0,0,0,10"/>
+
+        <Label Grid.Row="10" Content="Разрешение (например, 1920x1080 или оставьте пустым):" Margin="0,10,0,0"/>
+        <TextBox Grid.Row="11" x:Name="ResolutionTextBox" Margin="0,0,0,10"/>
+
+        <Label Grid.Row="12" Content="Пресет кодирования:" Margin="0,10,0,0"/>
+        <ComboBox Grid.Row="13" x:Name="PresetComboBox" Margin="0,0,0,10" SelectedIndex="2">
+            <ComboBoxItem>faster</ComboBoxItem>
+            <ComboBoxItem>fast</ComboBoxItem>
+            <ComboBoxItem>medium</ComboBoxItem>
+            <ComboBoxItem>slow</ComboBoxItem>
+            <ComboBoxItem>slower</ComboBoxItem>
+        </ComboBox>
+
+        <Button Grid.Row="14" Content="Конвертировать" Click="OnConvertClick" Margin="0,10,0,0"/>
+
+        <ProgressBar Grid.Row="15" x:Name="ProgressBar" Height="20" Margin="0,10,0,0" Visibility="Collapsed" Minimum="0" Maximum="100"/>
+        <TextBlock Grid.Row="16" x:Name="LogTextBlock" Margin="0,10,0,0" TextWrapping="Wrap"/>
+    </Grid>
+</Window>
